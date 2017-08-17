@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.james.spring.dao.mapper.TEventPageMapper;
+import com.james.spring.dao.mapper.master.TEventPageMapper;
 import com.james.spring.entity.TEventPage;
 
 @RestController

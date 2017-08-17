@@ -1,4 +1,4 @@
-package com.james.spring.dao.mapper;
+package com.james.spring.dao.mapper.master;
 
 import com.james.spring.entity.TEventPage;
 
