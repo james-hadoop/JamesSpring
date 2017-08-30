@@ -42,7 +42,7 @@ public class GreetingController {
 	public String greetingPage(@RequestParam(value = "name", required = false, defaultValue = "World") String name,
 			Model model) {
 		model.addAttribute("name", name);
-		return "greeting_page";
+		return "greetingPage.html";
 	}
 
 	@RequestMapping("/hypermediaGreeting")

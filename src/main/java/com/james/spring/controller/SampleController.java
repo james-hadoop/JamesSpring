@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SampleController {
-	@RequestMapping("/")
+	@RequestMapping("/sample")
 	@ResponseBody
 	String home() {
 		return "Hello JamesSpring!";

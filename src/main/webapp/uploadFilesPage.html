@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>uploadFilesPage</title>
+
+<link rel="stylesheet" type="text/css"
+  href="js/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+  href="js/upload_file/jquery.uploadfile.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript"
+  src="js/upload_file/jquery.uploadfile.min.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        var paramJarUpload = $("#param_jar_upload").uploadFile({
+            url : "/uploadFiles",
+            multiple : true,
+            autoSubmit : false,
+            dragDrop : false,
+            removeCompleted : true,
+            onSuccess : function(files, data, xhr, pd) {
+                paramJarUpload.reset();
+            },
+            onCancel : function(files, pd) {
+                window.location.reload();
+            }
+        });
+
+        $("#param_jar_upload_submit").bind('click', function() {
+            paramJarUpload.startUpload();
+        });
+    });
+</script>
+</head>
+<body>
+  <div class="form-group" style="height: 200px; overflow: auto">
+    <label class="col-sm-2 control-label">上传文件：</label>
+    <div class="col-sm-10">
+      <span id="param_jar_upload_submit" class="file-upload-submit">
+        <span>&nbsp;&nbsp;上传&nbsp;&nbsp;</span>
+      </span> &nbsp;&nbsp;<span id="param_jar_upload" style="margin-top: 10px;">
+        <i class=""> </i><span>添加...</span>
+      </span>
+    </div>
+  </div>
+</body>
+</html>
