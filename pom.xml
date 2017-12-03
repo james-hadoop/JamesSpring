@@ -5,7 +5,7 @@
   <artifactId>JamesSpring</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>JamesSpring Maven Webapp</name>
+  <name>AppService Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <parent>
@@ -13,6 +13,7 @@
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>1.5.6.RELEASE</version>
   </parent>
+  
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
