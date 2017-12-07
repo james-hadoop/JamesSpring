@@ -19,7 +19,6 @@ public class DataUtil {
     private static final String DIVIDER_BETWEEN_DATA_AND_TIMESTAMP = ",";
 
     public static void main(String[] args) throws Exception {
-        String key = "key1key1key1key1";
         long timestamp = new Date().getTime();
         String data = "hello james";
 
@@ -80,7 +79,6 @@ public class DataUtil {
 
     public static DataWithTimestampEntity decode(String key, String data) throws Exception {
         String decodedData = decrypt(data, key.getBytes());
-        System.out.println("decodedData=" + decodedData);
 
         String[] arr = decodedData.split(DIVIDER_BETWEEN_DATA_AND_TIMESTAMP);
         DataWithTimestampEntity entity = new DataWithTimestampEntity(arr[0], Long.parseLong(arr[1]));
@@ -94,15 +92,16 @@ public class DataUtil {
         }
 
         DataWithTimestampEntity entity = DataUtil.decode(key, urlParameter);
-        //System.out.println(entity.getData() + " => " + entity.getTimestamp());
+        // System.out.println(entity.getData() + " => " + entity.getTimestamp());
 
         long currentTimestamp = new Date().getTime();
         if (delayInterval > currentTimestamp - entity.getTimestamp()) {
             return true;
         }
 
-//        System.out.println("currentTimestamp=" + currentTimestamp + " entity.getTimestamp()=" + entity.getTimestamp());
-//        System.out.println("delayInterval=" + delayInterval);
+        // System.out.println("currentTimestamp=" + currentTimestamp + "
+        // entity.getTimestamp()=" + entity.getTimestamp());
+        // System.out.println("delayInterval=" + delayInterval);
 
         return false;
     }

@@ -17,7 +17,7 @@ import com.james.spring.util.DataUtil;
 
 @Service
 public class AuthorityFilter implements Filter {
-    private static int qualifiedInterval = 1000 * 60 * 60 * 2;
+    private static int qualifiedInterval = 1000 * 30;
 
     @Override
     public void init(FilterConfig arg0) throws ServletException {
