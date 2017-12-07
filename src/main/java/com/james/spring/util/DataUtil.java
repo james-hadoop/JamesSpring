@@ -94,7 +94,7 @@ public class DataUtil {
         }
 
         DataWithTimestampEntity entity = DataUtil.decode(key, urlParameter);
-        System.out.println(entity.getData() + " => " + entity.getTimestamp());
+        //System.out.println(entity.getData() + " => " + entity.getTimestamp());
 
         long currentTimestamp = new Date().getTime();
         if (delayInterval > currentTimestamp - entity.getTimestamp()) {

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SampleController {
+    
 	@RequestMapping("/sample")
 	@ResponseBody
 	String home() {

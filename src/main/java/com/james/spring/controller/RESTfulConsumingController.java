@@ -8,6 +8,7 @@ import com.james.spring.entity.Quote;
 
 @RestController
 public class RESTfulConsumingController {
+    
 	@RequestMapping("/restfulConsuming")
 	public String restfulConsuming() {
 		RestTemplate restTemplate = new RestTemplate();

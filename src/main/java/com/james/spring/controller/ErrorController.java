@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ErrorController {
+    
     @RequestMapping("/errorPage")
     public String error() {
         return "errorPage";
