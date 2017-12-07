@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import com.james.spring.util.DataUtil;
 
 @Service
-public class AuthorityFilter implements Filter {
+public class StaticResourceFilter implements Filter {
     private static int qualifiedInterval = 1000 * 30;
 
     @Override
