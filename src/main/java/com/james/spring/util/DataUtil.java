@@ -101,6 +101,9 @@ public class DataUtil {
             return true;
         }
 
+//        System.out.println("currentTimestamp=" + currentTimestamp + " entity.getTimestamp()=" + entity.getTimestamp());
+//        System.out.println("delayInterval=" + delayInterval);
+
         return false;
     }
 }
