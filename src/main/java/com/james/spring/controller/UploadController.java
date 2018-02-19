@@ -3,7 +3,6 @@ package com.james.spring.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -51,7 +50,8 @@ public class UploadController {
         HashMap<String, String> returnData = new HashMap<String, String>();
 
         try {
-            CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+            CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(
+                    request.getSession().getServletContext());
             if (multipartResolver.isMultipart(request)) {
                 MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest) request;
 
@@ -94,7 +94,8 @@ public class UploadController {
                 String fileName = files[i].getOriginalFilename();
 
                 byte[] bytes = files[i].getBytes();
-                BufferedOutputStream buffStream = new BufferedOutputStream(new FileOutputStream(new File(fileDir +File.separator+ fileName)));
+                BufferedOutputStream buffStream = new BufferedOutputStream(
+                        new FileOutputStream(new File(fileDir + File.separator + fileName)));
                 buffStream.write(bytes);
                 buffStream.close();
             }
@@ -124,7 +125,10 @@ public class UploadController {
     @GetMapping("/gellallfiles")
     public String getListFiles(Model model) {
         model.addAttribute("files",
-                        files.stream().map(fileName -> MvcUriComponentsBuilder.fromMethodName(UploadController.class, "getFile", fileName).build().toString()).collect(Collectors.toList()));
+                files.stream()
+                        .map(fileName -> MvcUriComponentsBuilder
+                                .fromMethodName(UploadController.class, "getFile", fileName).build().toString())
+                        .collect(Collectors.toList()));
         model.addAttribute("totalFiles", "TotalFiles: " + files.size());
         return "listFiles";
     }
@@ -133,6 +137,8 @@ public class UploadController {
     @ResponseBody
     public ResponseEntity<Resource> getFile(@PathVariable String filename) {
         Resource file = storageService.loadFile(filename);
-        return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"").body(file);
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
+                .body(file);
     }
 }
