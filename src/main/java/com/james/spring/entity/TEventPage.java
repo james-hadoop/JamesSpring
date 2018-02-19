@@ -2,14 +2,14 @@ package com.james.spring.entity;
 
 import java.util.Date;
 
-public class TEventPage {
+public class TEventPage implements Comparable<TEventPage> {
     private Long hEventId;
 
-    private Integer sEventCategoryCd;
+    private Integer sEventCategoryCd = 0;
 
     private String rEventCategoryDesc;
 
-    private Integer sEventTypeCd;
+    private Integer sEventTypeCd = 0;
 
     private String rEventTypeDesc;
 
@@ -19,13 +19,15 @@ public class TEventPage {
 
     private String sEventSubContent1Url;
 
-    private Integer sEventActiveInd;
+    private String sEventSubContent2Str;
+
+    private Integer sEventActiveInd = 0;
 
     private Date createTs;
 
     private Date updateTs;
 
-    private String sEventSearchContentTxt;
+    private String sEventSearchContentTxt = "?";
 
     public Long gethEventId() {
         return hEventId;
@@ -91,6 +93,14 @@ public class TEventPage {
         this.sEventSubContent1Url = sEventSubContent1Url;
     }
 
+    public String getsEventSubContent2Str() {
+        return sEventSubContent2Str;
+    }
+
+    public void setsEventSubContent2Str(String sEventSubContent2Str) {
+        this.sEventSubContent2Str = sEventSubContent2Str;
+    }
+
     public Integer getsEventActiveInd() {
         return sEventActiveInd;
     }
@@ -121,5 +131,10 @@ public class TEventPage {
 
     public void setsEventSearchContentTxt(String sEventSearchContentTxt) {
         this.sEventSearchContentTxt = sEventSearchContentTxt;
+    }
+
+    @Override
+    public int compareTo(TEventPage o) {
+        return (int) (hEventId - o.gethEventId());
     }
 }

@@ -1,4 +1,4 @@
-package com.james.spring.configuration;
+package com.james.spring.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

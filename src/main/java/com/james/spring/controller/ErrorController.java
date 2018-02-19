@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ErrorController {
     
     @RequestMapping("/errorPage")
-    public String error() {
+    public String errorPage() {
         return "errorPage";
     }
 }

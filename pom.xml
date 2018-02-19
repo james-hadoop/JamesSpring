@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.james.spring</groupId>
-  <artifactId>JamesSpring</artifactId>
+  <artifactId>JamesSpringProject</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>AppService Maven Webapp</name>
@@ -13,7 +13,7 @@
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>1.5.6.RELEASE</version>
   </parent>
-  
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -55,7 +55,6 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>6.0.6</version>
     </dependency>
     <dependency>
       <groupId>com.alibaba</groupId>
@@ -75,7 +74,6 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-dbcp2</artifactId>
-      <version>2.1.1</version>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -98,12 +96,10 @@
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-      <version>4.5.3</version>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpmime</artifactId>
-      <version>4.5.3</version>
     </dependency>
 
     <dependency>
@@ -120,7 +116,7 @@
   </properties>
 
   <build>
-    <finalName>JamesSpring</finalName>
+    <finalName>JamesSpringProject</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
