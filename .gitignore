@@ -1,4 +1,5 @@
 /target/
+/home/james/workspace/JamesSpring/src/main/resources/mykeys.jks
 /mybatisGenerator/
 .project
 /.settings/
