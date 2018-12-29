@@ -54,8 +54,7 @@ public class ClusterDruidDataSourceConfig {
      */
     @Bean(name = "clusterTransactionManager")
     public DataSourceTransactionManager clusterTransactionManager(
-            @Qualifier("clusterDataSource") DataSource dataSource
-    ) {
+            @Qualifier("clusterDataSource") DataSource dataSource) {
         DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager();
         dataSourceTransactionManager.setDataSource(dataSource);
         return dataSourceTransactionManager;
