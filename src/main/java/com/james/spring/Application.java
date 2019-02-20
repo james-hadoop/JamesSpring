@@ -9,9 +9,11 @@ import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @ServletComponentScan
+@EnableAsync
 public class Application implements CommandLineRunner, EmbeddedServletContainerCustomizer {
 
     public static void main(String[] args) {
