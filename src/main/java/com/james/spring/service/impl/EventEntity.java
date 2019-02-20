@@ -23,13 +23,4 @@ public class EventEntity {
     public CallSpringApplicationEventServiceImpl createService() {
         return null;
     }
-
-    @EventListener
-    @Async
-    public void MySpringApplicationEventListener(MySpringApplicationEvent event) {
-        System.out.println("MySpringApplicationEventListener triggered...");
-        EventEntity entity = new EventEntity((String) event.getSource());
-
-        ReturnData.returnData = entity.getData();
-    }
 }
