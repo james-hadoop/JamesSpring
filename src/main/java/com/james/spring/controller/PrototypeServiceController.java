@@ -16,15 +16,16 @@ import com.james.spring.service.IPrototypeService;
 public class PrototypeServiceController {
     private Set<IPrototypeService> services = new HashSet<IPrototypeService>();
 
-    @Autowired
-    @Qualifier("singleServiceImpl")
-    IPrototypeService singleService;
+//    @Autowired
+//    @Qualifier("singleServiceImpl")
+//    IPrototypeService singleService;
 
     @RequestMapping("/prototype")
     public String prototype(@RequestParam(value = "id") String id) {
         IPrototypeService prototypeService = createService(id);
+        IPrototypeService singletonService = createSingletonService(id);
 
-        services.add(singleService);
+        services.add(singletonService);
         services.add(prototypeService);
 
         StringBuilder sb = new StringBuilder();
@@ -37,6 +38,11 @@ public class PrototypeServiceController {
 
     @Lookup("prototypeServiceImpl")
     public IPrototypeService createService(String id) {
+        return null;
+    }
+    
+    @Lookup("singleServiceImpl")
+    public IPrototypeService createSingletonService(String id) {
         return null;
     }
 }

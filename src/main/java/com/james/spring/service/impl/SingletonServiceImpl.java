@@ -1,10 +1,12 @@
 package com.james.spring.service.impl;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.james.spring.service.IPrototypeService;
 
 @Service("singleServiceImpl")
+@Scope("singleton")
 public class SingletonServiceImpl implements IPrototypeService {
     private String id = "SingletonServiceImpl";
 
